@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 80%;
+            margin: 150px auto;
+            box-sizing: border-box;
+        }
+        li{
+            list-style:none;
+            float: left;
+            height: 80px;
+            width: 20%;
+            margin-left: 4%;
+            margin-bottom: 30px;
+            padding-top: 40px;
+            background-color: azure;
+        }
+        .ul li{
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        h4{
+            font-weight: bold;
+            color:#000;
+            display: inline-block;
+            margin: 0;
+        }
+        span{
+            display: inline-block;
+            background-color: cornsilk;
+            width: 50px;
+            text-align: center;
+        }
+        li div{
+            margin-left: 80px;
+        }
+        .active{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+
+   <div id="app">
+       <h1>{{text}}</h1>
+       <ul class="ul">
+           <li>1组</li>
+           <li>2组</li>
+           <li>3组</li>
+           <li>4组</li>
+       </ul>
+        <ul v-for="(list,index) in lists">
+       <li v-for='(lbl,i) in list' @click="move(index,i)" :class="{ active: lists[index][i].bool }">
+           <div><span>{{lbl.seat}}</span> <h4>{{lbl.name}}</h4><br>{{lbl.post}}</div>
+       </li>
+        </ul>
+   </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+    <script src="lx2.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 80%;
+            margin: 150px auto;
+            box-sizing: border-box;
+        }
+        li{
+            list-style:none;
+            float: left;
+            height: 80px;
+            width: 20%;
+            margin-left: 4%;
+            margin-bottom: 30px;
+            padding-top: 40px;
+
+        }
+        li:nth-child(34){
+            background-color: aqua;
+
+        }
+        li:nth-child(34) span{
+            background-color: aliceblue;
+        }
+        li:nth-child(36){
+            background-color: aqua;
+
+        }
+        li:nth-child(36) span{
+            background-color: aliceblue;
+
+        }
+        h1{
+            text-align: center;
+        }
+        h4{
+            font-weight: bold;
+            color:#000;
+            display: inline-block;
+            margin: 0;
+        }
+        span{
+            display: inline-block;
+            background-color: cornsilk;
+            width: 50px;
+            text-align: center;
+        }
+        li div{
+            margin-left: 80px;
+        }
+        .ul li{
+            border: 0;
+        }
+        .active{
+            border: 1px solid #e6e6e6;
+        }
+        .active2{
+            border: 1px solid aqua;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+
+   <div id="app">
+       <h1>{{text}}</h1>
+       <ul class="ul">
+           <li>1组</li>
+           <li>2组</li>
+           <li>3组</li>
+           <li>4组</li>
+       </ul>
+        <ul class="box">
+       <li v-for='(list,index) in lists' @click="move(index)" :class="{ active: isActive, 'active2': hasError }">
+           <div><span>{{list.seat}}</span> <h4>{{list.name}}</h4><br>{{list.post}}</div>
+       </li>
+        </ul>
+   </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+    <script src="lx.js"></script>
+</body>
+</html>
